@@ -1,0 +1,66 @@
+EXP: 'neurips2021'
+SETTING_EXP: 'int_across_sites_3'
+
+MODEL:
+  NAME: 'moetm'
+  HIDDEN_DIM: 400
+  VALIDATION: True
+  TARGET_INFERENCE: 'PREDICT'
+  EPOCHS: 3000
+  FT_EPOCHS: 3000
+  LR: 1e-3
+  KL: 1e-4
+  KL_SETTING: 'new'
+  KL_SETTING_FT: 'new'
+  BETA: 1e-1
+  BETA_FT: 1e-1
+  PATIENCE: 50
+  TRAINDIR: ''
+  FTDIR: ''
+  LOGGING_INTERVAL: 200
+    
+PATCHWORK:
+  MISSING_TRAIN: {'GEX': [], 'ATAC': []}
+  MISSING_TEST: {'GEX': ['site3_multiome'], 'ATAC': ['site4_multiome']}
+
+DATASET:
+  NAME: 'neurips-2021'
+  OMICS: ['GEX', 'ATAC']
+  SEQ_TYPES: {'multiome': ['GEX', 'ATAC']}
+  PROTEIN_CODING_ONLY: False
+  DIR: 'data/neurips-2021/'
+  SITE: None  
+  DONOR: None
+  STATUS: None
+  SPLIT: 'Site'
+  BATCH_SIZE: 160000
+  TEST_SPLIT_FRAC: 1.
+  VAL_SPLIT_FRAC: 0.5
+  BATCH_EFFECT: 'Site'
+  PLOT_BATCH_EFFECT: 'Site'
+  RAW_COUNTS_KEY: 'None'
+  DONOR_KEY: 'DonorNumber'
+  CELL_TYPES_KEY: 'cell_type'
+  SITE_KEY: 'Site'
+  STATUS_KEY: None
+  TRAIN_KEYS: [None]
+  TEST_KEYS: [None]
+
+DENOISE:
+  PRE: False
+  POST: False
+
+EVAL:
+  CLF_KEY: 'cell_type'
+  BASELINES: []
+
+VISUALIZATION:
+  QUALITY: False
+  CELL_TYPES: False
+  PCA: False
+  MANIFOLD: None
+  GRAPH: False
+  GRAPH_DISTANCE: False
+  GRAPH_SPECTRUM: False
+  COMPARE: False
+  PLOT_KEYS: ['batch']
