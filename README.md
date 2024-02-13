@@ -7,7 +7,6 @@ conda create --name sc5 --file environment_droplet.yml
 
 ### Run patchwork integration & eval
 ```
-cd multi-site
 chmod +x ./scripts/*
 
 CONFIG=neurips2021_combine_missing_site
