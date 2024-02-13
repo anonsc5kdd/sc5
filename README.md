@@ -1,4 +1,4 @@
-## $SC^5$: Single-Cell Cross-Cohort Cross-Category) integration
+## $SC^5$: Single-Cell Cross-Cohort Cross-Category integration
 
 ### Dataset
 The raw NeurIPS 2021 AnnData files can be downloaded from [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122)
